@@ -1,0 +1,72 @@
+## First part from https://github.com/github/gitignore/blob/master/SugarCRM.gitignore
+# Ignore custom .htaccess stuff.
+/.htaccess
+# Ignore the cache directory completely. *ATTENTION!* This will break things!
+sess/*
+cache/*
+# Ignore some files and directories from the custom directory.
+custom/history/*
+custom/modulebuilder/*
+custom/working/*
+custom/modules/*/Ext/
+custom/blowfish/
+custom/modules/Connectors/
+custom/application/Ext/*
+# Custom configuration should also be ignored.
+/config.php
+/config_override.php
+/config.php.edb1
+/config.php.kdb1
+# The silent upgrade scripts aren't needed.
+silentUpgrade*.php
+# Logs files can safely be ignored.
+*.log
+# The new upload directories (since 6.4).
+express_load/files/*
+express_load/new_load/files/*
+upload/*
+upload_backup/*
+sess/sess_*
+## IDE specific items
+# Eclipse
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+# IntelliJ Idea
+*.iml
+*.ipr
+*.iws
+.idea/
+# NetBeans
+nbproject/
+# Vim
+.*.sw[a-z]
+*.un~
+Session.vim
+# Windows
+Thumbs.db
+Desktop.ini
+# Mac OS X
+.DS_Store
+._.DS_Store
+
+docx_export/CACHE_UPLOAD/

@@ -1,0 +1,1385 @@
+; For each package use section with unique name.
+; `path` defines relative path to folder with package sources.
+; `id` defines package id_name.
+; `version` must be specified.
+; `environment` (optional) means that this package must be installed in some custom
+;     environment other than production. Multiple environments separated by spaces.
+; `overwrite` (optional) means that this package overwrites some packages and
+;     must be reinstalled after them. Their id_names separated by spaces should be
+;     defined here.
+;
+; Example:
+; [example]
+;     path = packages/example_dir
+;     id = example_id
+;     version = 1.0.0
+
+; Environments:
+;  develop - пакеты для сборок разработчиков (для автотестов, для синхронизации с ручными изменениями на проде)
+;  ignore - пакеты, которые можно не ставить
+;  hs321 - пакеты, которые поддерживаются hardsoft321, это не скрипты для прода
+
+; TODO: изменение varchar2 полей
+; CREATE OR REPLACE PROCEDURE sugar_oracle_repair
+; AS
+; BEGIN
+;  FOR AAA IN
+;  ( SELECT
+;     a.TABLE_NAME, a.COLUMN_NAME, a.DATA_TYPE, a.DATA_LENGTH
+;    FROM
+;     user_tab_columns a
+;    WHERE
+;     a.DATA_TYPE = 'VARCHAR2'
+;    AND
+;     a.CHAR_USED = 'B'
+;  )
+;  LOOP
+;   EXECUTE IMMEDIATE 'ALTER TABLE '||AAA.TABLE_NAME||' MODIFY '||AAA.COLUMN_NAME||' VARCHAR2('||AAA.DATA_LENGTH||' CHAR)';
+;  END LOOP;
+; END;  --PROCEDURE sugar_oracle_repair
+;
+; CALL sugar_oracle_repair();
+
+; RUSSIAN RAPIRA LANGUAGE PACK уже в гите, TODO: в config.php в languages добавить 'ru_ru' => 'Русский - Russian'
+[ru_ru]
+    path =
+    id = ru_ru
+    version = 6.5.11
+    environment = bank
+
+[Competitor_Owners]
+    path =
+    id = Competitor_Owners
+    version = 0.0.0.init.1
+    environment = bank
+
+[Notes2]
+    path =
+    id = Notes2
+    version = 1422007198
+    environment = bank
+
+[script2_32]
+    path =
+    id = script2_32
+    version = 0.0.3
+    environment = bank
+
+[SugarBeanMailer]
+    path = packages/sugarbeanmailer
+    id = SugarBeanMailer
+    version = 0.2.1
+
+[SecurityTeams321]
+    path = packages/securityteams321
+    id = SecurityTeams321
+    version = 0.0.15
+; TODO:
+; create or replace function sugar_guid
+; return varchar2
+; is
+;  qaz varchar2(36);
+; begin
+;   select LOWER(substr(sys_guid(), 1, 8)||'-'||substr(sys_guid(), 9, 4)||'-'||substr(sys_guid(), 13, 4)||'-'||substr(sys_guid(),17, 4)||'-'||substr(sys_guid(),21,12)) into qaz from dual;
+; return qaz;
+; end;
+
+; TODO: сверить с банком
+; В Администрирование->Настройки Групп пользователей
+;     //убрать галочку "Аддитивные Права"
+;     установить галочки "Приоритет ролей пользователя", "Строгие права"
+;     убрать галочку "Фильтровать список пользователей"
+;     установить галочку "Используйте Creator Выбор группы"
+;     //убрать галочку "Наследовать группы от создавшего пользователя"
+;     убрать галочку "Наследовать от назначенного пользователя"
+
+[yui_https_fixing]
+    path = packages/yui_https_fixing
+    id = yui_https_fixing
+    version = 0.0.0.init.0
+
+[DB_doms]
+    path = packages/db_doms
+    id = DB_doms
+    version = 0.0.1
+    environment = hs321
+
+[Address]
+    path = packages/addresses
+    id = Address
+    version = 1.1.4
+
+[AddressesSecurityTeams]
+    path = packages/addressessecurityteams
+    id = AddressesSecurityTeams
+    version = 0.0.0.init
+
+[Uniq_id_field]
+    path = packages/uniq_id_field
+    id = Uniq_id_field
+    version = 0.0.2
+
+[Tasks_audit]
+    path = packages/tasks_audit
+    id = Tasks_audit
+    version = 1.0.0
+
+[Accounts_rf_props_field]
+    path = packages/accounts_rf_props_field
+    id = Accounts_rf_props_field
+    version = 1.0.2
+
+[Workflow-WF]
+    path = packages/workflow
+    id = Workflow-WF
+    version = 0.11.9
+    environment = hs321
+
+[Workflow_securitygroups]
+    path = packages/workflow_securitygroups
+    id = Workflow_securitygroups
+    version = 0.0.0.init
+    overwrite = Workflow-WF
+    environment = ignore
+
+[Multienumfilter]
+    path = packages/multienumfilter
+    id = Multienumfilter
+    version = 0.0.3
+
+[increase_custom_version]
+    path = packages/increase_custom_version
+    id = increase_custom_version
+    version = 1.0.0
+
+[Contacts_passport_data]
+    path = packages/contacts_passport_data
+    id = Contacts_passport_data
+    version = 0.0.0.init
+
+[Uralsib_timezone]
+    path = packages/uralsib_timezone
+    id = Uralsib_timezone
+    version = 0.0.1
+
+[Insert_org_form_dom]
+    path = packages/insert_org_form_dom
+    id = Insert_org_form_dom
+    version = 0.0.3
+
+[Tasks_type-1.0.3]
+    path = packages/tasks_type_1
+    id = Tasks_type
+    version = 1.0.3
+
+[Tasks_workflow]
+    path = packages/tasks_workflow
+    id = Tasks_workflow
+    version = 0.6.1
+
+[Uralsib_contacts]
+    path = packages/uralsib_contacts
+    id = Uralsib_contacts
+    version = 3.7.11
+; actually 3.7.12
+
+[Uralsib_employees]
+    path = packages/uralsib_employees
+    id = Uralsib_employees
+    version = 0.0.1
+
+[Uralsib_users]
+    path = packages/uralsib_users
+    id = Uralsib_users
+    version = 3.8.1.2
+    overwrite = SecurityTeams321 ActionsAudit
+
+[Uralsib_core]
+    path = packages/uralsib_core
+    id = Uralsib_core
+    version = 3.3.15
+    overwrite = Workflow-WF SecurityTeams321 ActionsAudit Covenants audit_description
+
+[ActionsAudit]
+    path = packages/actionsaudit
+    id = ActionsAudit
+    version = 0.0.21
+;    overwrite = SecurityTeams321
+; при переустановке ActionsAudit через "Загрузчик модулей" сбросятся его роли!!!
+; поэтому, чтобы не переустанавливать ActionsAudit после SecurityTeams321, скопировал пересекающиеся файлы в Uralsib_users
+
+[killSessionsJob]
+    path = packages/killsessionsjob
+    id = killSessionsJob
+    version = 0.0.2
+
+[Insert_OKVED_and_industry]
+    path = packages/insert_okved_and_industry
+    id = Insert_OKVED_and_industry
+    version = 0.3.3
+
+[rf_orgs_fields]
+    path = packages/rf_orgs_fields
+    id = rf_orgs_fields
+    version = 3.7.0
+
+[Uralsib_groups]
+    path = packages/uralsib_groups
+    id = Uralsib_groups
+    version = 0.0.1.init.1
+
+[LoadFromSiebel]
+    path = packages/uralsib_load
+    id = LoadFromSiebel
+    version = 0.0.0.init.1
+
+[OutcomeByMonthGroupsDashlet]
+    path = packages/outcomebymonthgroupsdashlet
+    id = OutcomeByMonthGroupsDashlet
+    version = 0.0.2
+
+[PipelineBySalesStageGroupsDashlet]
+    path = packages/pipelinebysalesstagegroupsdashlet
+    id = PipelineBySalesStageGroupsDashlet
+    version = 0.0.2
+
+[Uralsib_roles]
+    path = packages/uralsib_roles
+    id = Uralsib_roles
+    version = 0.0.22
+
+[Uralsib_roles_3_3]
+    path = packages/uralsib_roles_3_3
+    id = Uralsib_roles_3_3
+    version = 1.1.0
+
+[SecurityForms]
+    path = packages/securityforms
+    id = SecurityForms
+    version = 0.2.0
+; actually 0.2.1
+
+[Uralsib_task_credit_work_wf]
+    path = packages/uralsib_task_credit_work_wf
+    id = Uralsib_task_credit_work_wf
+    version = 0.0.2.3
+
+[Uralsib_account_task_wf]
+    path = packages/uralsib_account_task_wf
+    id = Uralsib_account_task_wf
+    version = 0.0.6.4
+
+[KReports]
+    path = packages/kreports
+    id = KReports
+    version = 0.3.5
+
+[Opportunities_workflow]
+    path = packages/opportunities_workflow
+    id = Opportunities_workflow
+    version = 1.0.0
+
+[Uralsib_opp_credit_new_wf]
+    path = packages/uralsib_opp_credit_new_wf
+    id = Uralsib_opp_credit_new_wf
+    version = 0.0.7.3
+
+[Holding]
+    path = packages/holdings
+    id = Holding
+    version = 0.0.7
+
+[Uralsib_calls]
+    path = packages/uralsib_calls
+    id = Uralsib_calls
+    version = 3.7.6.0
+
+[Uralsib_meetings]
+    path = packages/uralsib_meetings
+    id = Uralsib_meetings
+    version = 3.8.5
+
+[HoldingsSecurityTeams]
+    path = packages/holdingssecurityteams
+    id = HoldingsSecurityTeams
+    version = 0.0.0.init
+
+[Uralsib_Account_type_form]
+    path = packages/uralsib_account_type_form
+    id = Uralsib_Account_type_form
+    version = 0.0.3
+
+[Uralsib_notes]
+    path = packages/uralsib_notes
+    id = Uralsib_notes
+    version = 3.6.1
+
+[SecuritySettings]
+    path = packages/securitysettings
+    id = SecuritySettings
+    version = 0.0.34
+
+[Tasks_type]
+    path = packages/tasks_type
+    id = Tasks_type
+    version = 2.0.2
+
+[Uralsib_tasks]
+    path = packages/uralsib_tasks
+    id = Uralsib_tasks
+    version = 3.6.4
+
+[Uralsib_documents]
+    path = packages/uralsib_documents
+    id = Uralsib_documents
+    version = 3.9.0
+
+[Uralsib_add_group_dib_svk]
+    path = packages/uralsib_add_group_dib_svk
+    id = Uralsib_add_group_dib_svk
+    version = 0.0.1
+
+[SumInWordsField]
+    path = packages/suminwordsfield
+    id = SumInWordsField
+    version = 0.0.9
+
+[KReportSecurityGroups]
+    path = packages/kreports_securitygroups
+    id = KReportSecurityGroups
+    version = 0.0.1
+
+; [RatePeriodsField]
+;     path = packages/
+;     id = RatePeriodsField
+;     version = 0.0.2
+; пакет для релиза 2.6, который еще не согласован
+
+[SecurityDocumentations]
+    path = packages/uralsib_securitydocumentation
+    id = SecurityDocumentations
+    version = 0.0.18.1
+; версия 0.0.19 для релиза 2.6, который еще не согласован
+
+[SecurityDocumentations_workflow]
+    path = packages/securitydocumentations_workflow
+    id = SecurityDocumentations_workflow
+    version = 0.7.2
+
+[Logic]
+    path = packages/logic
+    id = Logic
+    version = 0.5.13
+
+[Hs321Widgets]
+    path = packages/hs321widgets
+    id = Hs321Widgets
+    version = 0.0.2
+
+[treegrid]
+    path = packages/treegrid
+    id = treegrid
+    version = 1.0.0
+
+[Limits]
+    path = packages/limits
+    id = Limits
+    version = 0.0.120
+
+[MultiParent]
+    path = packages/multiparent
+    id = MultiParent
+    version = 0.0.2
+
+[Loans]
+    path = packages/loans
+    id = Loans
+    version = 0.0.2.1
+
+[Guarantees]
+    path = packages/uralsib_guarantees
+    id = Guarantees
+    version = 0.0.3.2
+
+[CustomDashletGeneric]
+    path = packages/customdashletgeneric
+    id = CustomDashletGeneric
+    version = 0.0.0.3
+
+[Tranches]
+    path = packages/tranches
+    id = Tranches
+    version = 0.0.16.2
+; версия 0.0.17 для релиза 2.6, который еще не согласован
+
+[uralsib_sendemail]
+    path = packages/uralsib_sendemail
+    id = uralsib_sendemail
+    version = 3.8.2
+
+[Covenants]
+    path = packages/uralsib_covenant
+    id = Covenants
+    version = 0.0.9.4
+
+[Insurances]
+    path = packages/uralsib_insurances
+    id = Insurances
+    version = 0.2.4.1
+
+[SecurityDocumentationsSecurityTeams]
+    path = packages/securitydocumentationssecurityteams
+    id = SecurityDocumentationsSecurityTeams
+    version = 0.0.0.init.2
+    overwrite = SecurityDocumentations
+
+[Tranches_workflow]
+    path = packages/tranches_workflow
+    id = Tranches_workflow
+    version = 0.7.2
+
+[Confirmations]
+    path = packages/confirmations
+    id = Confirmations
+    version = 0.1.1
+
+[ConfirmationsSecurityTeams]
+    path = packages/confirmationssecurityteams
+    id = ConfirmationsSecurityTeams
+    version = 0.0.0.init.1
+
+[Confirmations_workflow]
+    path = packages/confirmations_workflow
+    id = Confirmations_workflow
+    version = 0.7.2
+
+[FakeCron]
+    path = packages/uralsib_fakecron
+    id = FakeCron
+    version = 0.0.2
+    environment = develop
+
+[Accounts_subpanels]
+    path = packages/accounts_subpanels
+    id = Accounts_subpanels
+    version = 3.7.4
+
+[BoolCheckBoxField]
+    path = packages/boolcheckboxfield
+    id = BoolCheckBoxField
+    version = 0.0.1
+
+[Uralsib_MergeRecords]
+    path = packages/uralsib_mergerecords
+    id = Uralsib_MergeRecords
+    version = 0.0.1
+
+[Uralsib_accounts]
+    path = packages/uralsib_accounts
+    id = Uralsib_accounts
+    version = 3.8.16
+    overwrite = LoadFromSiebel relationship_email
+
+[Uralsib_SecurityDocumentations]
+    path = packages/uralsib_securitydocumentations_custom
+    id = Uralsib_SecurityDocumentations
+    version = 0.0.5
+
+[Uralsib_tranches]
+    path = packages/uralsib_tranches
+    id = Uralsib_tranches
+    version = 0.0.5
+
+[Uralsib_confirmations_for_tranches_wf]
+    path = packages/uralsib_confirmations_for_tranches_wf
+    id = Uralsib_confirmations_for_tranches_wf
+    version = 0.0.4.1
+
+[TfTemplates]
+    path = packages/tftemplates
+    id = TfTemplates
+    version = 0.0.18
+
+[Uralsib_groups_update1]
+    path = packages/uralsib_groups_update1
+    id = Uralsib_groups_update1
+    version = 0.0.1
+    environment = develop
+
+[Uralsib_groups_update2]
+    path = packages/uralsib_groups_update2
+    id = Uralsib_groups_update2
+    version = 3.3.0
+    environment = develop
+
+[Uralsib_opportunities]
+    path = packages/uralsib_opportunities
+    id = Uralsib_opportunities
+    version = 3.6.5
+    overwrite = Opportunities_workflow
+
+[Uralsib_form]
+    path = packages/uralsib_form
+    id = Uralsib_form
+    version = 3.9.5
+
+[bizdayscalendar]
+    path = packages/bizdayscalendar
+    id = bizdayscalendar
+    version = 1.1.0
+
+[Uralsib_report_pack]
+    path = packages/uralsib_report_pack
+    id = Uralsib_report_pack
+    version = 3.9.8
+; actually 3.9.9
+
+[Uralsib_confirmations]
+    path = packages/uralsib_confirmations
+    id = Uralsib_confirmations
+    version = 0.0.3
+
+[Branches]
+    path = packages/branches
+    id = Branches
+    version = 1.2.1
+
+[Uralsib_Branches_data]
+    path = packages/uralsib_branches_data
+    id = Uralsib_Branches_data
+    version = 0.0.1
+
+[Uralsib_account_task_wf_upgrade]
+    path = packages/uralsib_account_task_wf_upgrade
+    id = Uralsib_account_task_wf_upgrade
+    version = 0.0.2
+
+[Uralsib_accounts_with_segmentation]
+    path = packages/uralsib_accounts_with_segmentation
+    id = Uralsib_accounts_with_segmentation
+    version = 3.7.8
+
+[Uralsib_limits]
+    path = packages/uralsib_limits
+    id = Uralsib_limits
+    version = 0.0.1
+
+[Uralsib_SecurityTeams321_override]
+    path = packages/uralsib_securityteams321_override
+    id = Uralsib_SecurityTeams321_override
+    version = 0.0.2
+    overwrite = SecurityTeams321
+
+[Uralsib_SecurityTeams321_override-0.0.2.1]
+    path =
+    id = Uralsib_SecurityTeams321_override
+    version = 0.0.2.1
+    overwrite = SecurityTeams321
+    environment = bank
+
+[Uralsib_opp_credit_new_wf_update1]
+    path = packages/uralsib_opp_credit_new_wf_update1
+    id = Uralsib_opp_credit_new_wf_update1
+    version = 0.0.4
+
+[Uralsib_sdocumentation_confirm_wf]
+    path = packages/uralsib_sdocumentation_confirm_wf
+    id = Uralsib_sdocumentation_confirm_wf
+    version = 0.0.8
+
+[Uralsib_discount_task_wf]
+    path = packages/uralsib_discount_task_wf
+    id = Uralsib_discount_task_wf
+    version = 0.0.7
+
+[Report_insurances]
+    path = packages/uralsib_report_insurances
+    id = Report_insurances
+    version = 0.0.5
+
+[MaskInput]
+    path = packages/maskinput
+    id = MaskInput
+    version = 0.1.0
+
+[Uralsib_tranche_confirm_wf]
+    path = packages/uralsib_tranche_confirm_wf
+    id = Uralsib_tranche_confirm_wf
+    version = 0.0.10
+
+[SugarFTSHooks]
+    path = packages/sugarftshooks
+    id = SugarFTSHooks
+    version = 1.0.0
+
+[Uralsib_Tasks_workflow]
+    path = packages/uralsib_tasks_workflow
+    id = Uralsib_Tasks_workflow
+    version = 0.7.0
+
+[FinancialParams]
+    path = packages/financialparams
+    id = FinancialParams
+    version = 0.0.4
+
+[Uralsib_task_credit_work_wf_update1]
+    path = packages/uralsib_task_credit_work_wf_update1
+    id = Uralsib_task_credit_work_wf_update1
+    version = 0.0.4
+
+; TODO: для запуска автотестов в config.php вписать 'testphpmailer_insert_to_db' => true,
+; см. README пакета TestPhpMailer
+; сделать Настройку Email в Администрировании
+[TestPhpMailer]
+    path = packages/testphpmailer
+    id = TestPhpMailer
+    version = 1.1.0
+    environment = develop
+
+[Uralsib_js]
+    path = packages/uralsib_js
+    id = Uralsib_js
+    version = 0.0.1
+
+[Uralsib_roles_3_5]
+    path = packages/uralsib_roles_3_5
+    id = Uralsib_roles_3_5
+    version = 1.0.0
+
+[Uralsib_test_users]
+    path = packages/uralsib_test_users
+    id = Uralsib_test_users
+    version = 3.8.2
+    environment = develop
+
+[groups_shifrs_data]
+    path = packages/groups_shifrs_data
+    id = groups_shifrs_data
+    version = 1.0.0
+    environment = develop
+
+[uralsib_task_wf_upgrade3]
+    path = packages/uralsib_task_wf_upgrade3
+    id = uralsib_task_wf_upgrade3
+    version = 0.0.1
+
+[integro_test_tables]
+    path = packages/integro_test_tables
+    id = integro_test_tables
+    version = 1.0.1
+    environment = develop
+
+[Treatments]
+    path = packages/treatments
+    id = Treatments
+    version = 0.1.14
+
+[Products]
+    path = packages/products
+    id = Products
+    version = 1.0.0
+
+[responses]
+    path = packages/responses
+    id = responses
+    version = 2.0.0
+
+[response_integration]
+    path = packages/response_integration
+    id = response_integration
+    version = 1.0.0
+
+[uralsib_insert_sync_integro]
+    path = packages/uralsib_insert_sync_integro
+    id = uralsib_insert_sync_integro
+    version = 2.11.3
+
+
+
+;    TODO:
+;    --------------------------------------------------------
+;    --  DDL for Table PL_SUGAR_EMAILS
+;    --------------------------------------------------------
+;      CREATE TABLE "PL_SUGAR_EMAILS"
+;       (	"ACC_ID" VARCHAR2(36 BYTE),
+;    	"MAIL_NAME" VARCHAR2(255 CHAR)
+;       ) SEGMENT CREATION IMMEDIATE
+;      PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255
+;     NOCOMPRESS LOGGING
+;      STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+;      PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+;      BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+;      TABLESPACE "USERS" ;
+;
+;    --------------------------------------------------------
+;    --  DDL for Function TAKE_OKVED_IND
+;    --------------------------------------------------------
+;      CREATE OR REPLACE FUNCTION "TAKE_OKVED_IND" (p_sieb_code in varchar2, p_what in integer)
+;    return varchar2
+;    as
+;     v_okved varchar2(1000 char) := NULL;
+;     v_ind varchar2(1000 char) := NULL;
+;
+;    begin
+;     if (p_sieb_code IS NULL OR TRIM(p_sieb_code) = '' OR p_what NOT IN (0,1))  THEN RETURN NULL; END IF;
+;
+;    if (p_what = 0) THEN
+;     SELECT
+;      LISTAGG(xxx.id,',') within group( order by xxx.id ) AS id
+;     INTO v_okved
+;     from (
+;      SELECT
+;      distinct
+;      '^'||id||'^' AS id
+;      FROM okved_and_industry WHERE okved_id IN (select regexp_substr(replace(p_sieb_code,' ',''),'[^,]+', 1, level) from dual
+;      connect by regexp_substr(replace(p_sieb_code,' ',''), '[^,]+', 1, level) is not null)
+;     ) xxx;
+;     RETURN v_okved;
+;    END IF;
+;
+;    if (p_what = 1) THEN
+;     SELECT
+;      LISTAGG(xxx.parent_id,',') within group( order by xxx.parent_id ) AS parent_id
+;     INTO v_ind
+;     from (
+;      SELECT
+;      distinct
+;      '^'||parent_id||'^' AS parent_id
+;      FROM okved_and_industry WHERE okved_id IN (select regexp_substr(replace(p_sieb_code,' ',''),'[^,]+', 1, level) from dual
+;      connect by regexp_substr(replace(p_sieb_code,' ',''), '[^,]+', 1, level) is not null)
+;     ) xxx;
+;     RETURN v_ind;
+;    END IF;
+;
+;
+;    end;  -- function
+;
+;    /
+;
+; Создать пользователя user_name = 'System'
+[LoadFromSiebelPatch1]
+    path = packages/uralsib_load_patch
+    id = LoadFromSiebelPatch1
+    version = 3.7.7
+    overwrite = LoadFromSiebel
+
+[Report_roles]
+    path = packages/uralsib_report_roles
+    id = Report_roles
+    version = 0.0.9
+
+[Report_pipeline]
+    path = packages/uralsib_report_pipeline
+    id = Report_pipeline
+    version = 0.1.7
+
+[Report_holdings]
+    path = packages/uralsib_report_holdings
+    id = Report_holdings
+    version = 0.1.6
+
+[Report_accounts]
+    path = packages/uralsib_report_accounts
+    id = Report_accounts
+    version = 0.1.6
+
+[Uralsib_roles_2_7]
+    path = packages/uralsib_roles_2_7
+    id = Uralsib_roles_2_7
+    version = 0.1.1
+
+[WorkflowFormFieldsLists]
+    path = packages/workflowformfieldslists
+    id = WorkflowFormFieldsLists
+    version = 1.0.0
+
+[Uralsib_opp_credit_new_wf_update2]
+    path = packages/uralsib_opp_credit_new_wf_update2
+    id = Uralsib_opp_credit_new_wf_update2
+    version = 0.0.2
+
+[uralsib_opp_credit_new_wf_update3]
+    path = packages/uralsib_opp_credit_new_wf_update3
+    id = uralsib_opp_credit_new_wf_update3
+    version = 3.1.1
+
+[Uralsib_task_credit_kssa_wf]
+    path = packages/uralsib_task_credit_kssa_wf
+    id = Uralsib_task_credit_kssa_wf
+    version = 0.0.11.2
+
+[Uralsib_task_pre_class_wf]
+    path = packages/uralsib_task_pre_class_wf
+    id = Uralsib_task_pre_class_wf
+    version = 0.12.0
+
+[Uralsib_task_srm_wf]
+    path = packages/uralsib_task_srm_wf
+    id = Uralsib_task_srm_wf
+    version = 0.0.11.3
+
+[Uralsib_task_pr_wf]
+    path = packages/uralsib_task_pr_wf
+    id = Uralsib_task_pr_wf
+    version = 3.2.0
+
+[Uralsib_task_credit_work_wf_update2]
+    path = packages/uralsib_task_credit_work_wf_update2
+    id = Uralsib_task_credit_work_wf_update2
+    version = 0.0.4
+
+[Uralsib_wf_update1]
+    path = packages/uralsib_wf_update1
+    id = Uralsib_wf_update1
+    version = 1.0.0
+
+[Uralsib_account_task_wf_upgrade2]
+    path = packages/uralsib_account_task_wf_upgrade2
+    id = Uralsib_account_task_wf_upgrade2
+    version = 0.12.0
+
+[audit_description]
+    path = packages/audit_description
+    id = audit_description
+    version = 1.0.2
+
+[uralsib_holdings]
+    path = packages/uralsib_holdings
+    id = uralsib_holdings
+    version = 1.0.0
+
+[uralsib_login_notice]
+    path = packages/uralsib_login_notice
+    id = uralsib_login_notice
+    version = 1.0.1
+
+[Uralsib_account_task_wf_upgrade3]
+    path = packages/uralsib_account_task_wf_upgrade3
+    id = Uralsib_account_task_wf_upgrade3
+    version = 0.12.1
+
+[uralsib_opp_task_wf_work_upgrade]
+    path = packages/uralsib_opp_task_wf_upgrade
+    id = uralsib_opp_task_wf_work_upgrade
+    version = 0.0.8
+
+[uralsib_opp_task_wf_upgrade2]
+    path = packages/uralsib_opp_task_wf_upgrade2
+    id = uralsib_opp_task_wf_upgrade2
+    version = 0.0.8.5
+
+[uralsib_opp_task_wf_upgrade3]
+    path = packages/uralsib_opp_task_wf_upgrade3
+    id = uralsib_opp_task_wf_upgrade3
+    version = 0.12.1
+
+[uralsib_opp_task_wf_upgrade4]
+    path = packages/uralsib_opp_task_wf_upgrade4
+    id = uralsib_opp_task_wf_upgrade4
+    version = 3.1.0
+
+[subpanel_mass_remove]
+    path = packages/subpanel_mass_remove
+    id = subpanel_mass_remove
+    version = 1.0.0
+
+[subpanel_mass_download]
+    path = packages/subpanel_mass_download
+    id = subpanel_mass_download
+    version = 1.0.12
+
+[uralsib]
+    path = packages/uralsib
+    id = uralsib
+    version = 0.0.10
+    environment = bank
+
+[uralsib-0.0.9]
+    path =
+    id = uralsib
+    version = 0.0.9
+    environment = bank
+
+[data_generator]
+    path = packages/data_generator
+    id = data_generator
+    version = 0.9.1
+    environment = develop
+
+[uralsib_data_generator]
+    path = packages/uralsib_data_generator
+    id = uralsib_data_generator
+    version = 1.0.1
+    environment = develop
+
+[Uralsib_roles_2_11]
+    path = packages/uralsib_roles_2_11
+    id = Uralsib_roles_2_11
+    version = 1.0.1
+
+[select2]
+    path = packages/select2
+    id = select2
+    version = 1.2.2
+
+[report_accounts_cpm]
+    path = packages/report_accounts_cpm
+    id = report_accounts_cpm
+    version = 0.0.1
+
+[report_manager_product]
+    path = packages/report_manager_product
+    id = report_manager_product
+    version = 0.0.11
+    environment = bank
+
+[report_manager_product-0.0.8]
+    path =
+    id = report_manager_product
+    version = 0.0.8
+    environment = bank
+
+[uralsib_leads]
+    path = packages/uralsib_leads
+    id = uralsib_leads
+    version = 3.7.13.1
+
+[Uralsib_task_pr_wf_update1]
+    path = packages/uralsib_task_pr_wf_update1
+    id = Uralsib_task_pr_wf_update1
+    version = 3.3.1
+
+[product_testimonials]
+    path = packages/product_testimonials
+    id = product_testimonials
+    version = 1.3.2
+
+[uralsib_upgrade_ssb_to_sb]
+    path = packages/uralsib_upgrade_ssb_to_sb
+    id = uralsib_upgrade_ssb_to_sb
+    version = 3.3.1
+
+[Uralsib_account_task_wf_upgrade4]
+    path = packages/uralsib_account_task_wf_upgrade4
+    id = Uralsib_account_task_wf_upgrade4
+    version = 3.5.0
+
+[uralsib_task_wf_upgrade4]
+    path = packages/uralsib_task_wf_upgrade4
+    id = uralsib_task_wf_upgrade4
+    version = 3.5.6
+
+[multiform]
+    path = packages/multiform
+    id = multiform
+    version = 1.3.1
+    environment = hs321
+
+[opportunity_products]
+    path = packages/opportunity_products
+    id = opportunity_products
+    version = 1.0.2
+
+[create_opp_products]
+    path = packages/create_opp_products
+    id = create_opp_products
+    version = 1.0.0
+
+[Uralsib_task_pr_wf_update2]
+    path = packages/uralsib_task_pr_wf_update2
+    id = Uralsib_task_pr_wf_update2
+    version = 3.6.0
+
+[licenses]
+    path = packages/licenses
+    id = License
+    version = 1.1.3
+
+[Uralsib_licenses]
+    path = packages/uralsib_licenses
+    id = Uralsib_licenses
+    version = 1.0.0
+
+[kih]
+    path = packages/kih
+    id = kih
+    version = 1.1.2
+
+[rsorders]
+    path = packages/rsorders
+    id = rsorders
+    version = 3.9.9
+
+;[rsorders_tftemplates]
+;    path = packages/rsorders_tftemplates
+;    id = rsorders_tftemplates
+;    version = 1.1.2
+
+[RSOrders_workflow]
+    path = packages/rsorders_workflow
+    id = RSOrders_workflow
+    version = 3.9.7
+
+[Scorings]
+    path = packages/scorings
+    id = Scorings
+    version = 3.9.11
+
+[Uralsib_roles_3_7]
+    path = packages/uralsib_roles_3_7
+    id = Uralsib_roles_3_7
+    version = 1.1.4
+
+[uralsib_rsorders_confirm_wf]
+    path = packages/uralsib_rsorders_confirm_wf
+    id = uralsib_rsorders_confirm_wf
+    version = 3.7.11
+
+[uralsib_rsorders_confirm_wf2]
+    path = packages/uralsib_rsorders_confirm_wf2
+    id = uralsib_rsorders_confirm_wf2
+    version = 3.9.1
+
+[Uralsib_roles_3_7_3]
+    path = packages/uralsib_roles_3_7_3
+    id = Uralsib_roles_3_7_3
+    version = 3.7.3.4
+
+[Uralsib_config]
+    path = packages/uralsib_config
+    id = Uralsib_config
+    version = 3.5.3
+
+[uralsib_history_communications_subpanel]
+    path = packages/uralsib_history_communications_subpanel
+    id = uralsib_history_communications_subpanel
+    version = 1.1.0
+
+[licenses_securityteams]
+    path = packages/licenses_securityteams
+    id = licenses_securityteams
+    version = 1.0.0
+
+[spark]
+    path = packages/spark
+    id = spark
+    version = 1.2.0
+    environment = hs321
+
+[agents]
+    path = packages/agents
+    id = Agents
+    version = 3.7.6
+
+[uralsib_insert_agents]
+    path = packages/uralsib_insert_agents
+    id = uralsib_insert_agents
+    version = 3.7.5.0
+
+[Uralsib_roles_3_7_5]
+    path = packages/uralsib_roles_3_7_5
+    id = Uralsib_roles_3_7_5
+    version = 3.7.5.4
+[uralsib_soap]
+    path = packages/uralsib_soap
+    id = uralsib_soap
+    version = 1.0.1
+
+[profits]
+    path = packages/profits
+    id = profits
+    version = 1.0.25
+
+[contracts]
+    path = packages/contracts
+    id = contracts
+    version = 1.0.7
+
+[Uralsib_roles_3_9_1]
+    path = packages/uralsib_roles_3_9_1
+    id = Uralsib_roles_3_9_1
+    version = 3.9.1.11
+
+[uralsib_okopf]
+    path = packages/uralsib_okopf
+    id = uralsib_okopf
+    version = 1.0.0
+
+[opportunities_salary]
+    path = packages/opportunities_salary
+    id = opportunities_salary
+    version = 1.0.11
+
+[importantdates]
+    path = packages/importantdates
+    id = ImportantDates
+    version = 0.0.5
+
+[Longlists]
+    path = packages/longlists
+    id = Longlists
+    version = 0.0.13
+
+[report_interest]
+    path = packages/report_interest
+    id = report_interest
+    version = 0.0.1
+    environment = bank
+
+[relationship_email]
+    path = packages/relationship_email
+    id = relationship_email
+    version = 1.0.1
+
+[Report_IndividualShowcases]
+    path =
+    id = Report_IndividualShowcases
+    version = 0.1.1
+    environment = bank
+
+[Report_Showcases_KM_TD]
+    path =
+    id = Report_Showcases_KM_TD
+    version = 0.0.9
+    environment = bank
+
+[Report_CallsMeetings]
+    path =
+    id = Report_CallsMeetings
+    version = 0.0.9
+    environment = bank
+
+[Report_ProductTestimonials]
+    path =
+    id = Report_ProductTestimonials
+    version = 0.0.12
+    environment = bank
+
+[Report_CustomerData]
+    path =
+    id = Report_CustomerData
+    version = 0.0.8
+    environment = bank
+
+[Report_LeadsReport]
+    path =
+    id = Report_LeadsReport
+    version = 1.2.7
+    environment = bank
+
+[Uralsib_roles_3_8_1]
+    path = packages/uralsib_roles_3_8_1
+    id = Uralsib_roles_3_8_1
+    version = 3.8.1.4
+
+[Uralsib_roles_3_8_2]
+    path = packages/uralsib_roles_3_8_2
+    id = Uralsib_roles_3_8_2
+    version = 3.8.2.0
+
+[uralsib_task_credit_work_wf_update3]
+    path = packages/uralsib_task_credit_work_wf_update3
+    id = uralsib_task_credit_work_wf_update3
+    version = 0.0.1
+
+[Uralsib_roles_3_9_2]
+    path = packages/uralsib_roles_3_9_2
+    id = Uralsib_roles_3_9_2
+    version = 3.9.2.4
+
+[DbAppListStrings]
+    path = packages/dbappliststrings
+    id = DbAppListStrings
+    version = 1.1.0
+    environment = hs321
+
+[labelloginformtest]
+    path = packages/labelloginformtest
+    id = labelloginformtest
+    version = 0.0.1
+    environment = develop
+
+[insert_sync_integro_upgrade]
+    path = packages/_upg/insert_sync_integro_upgrade
+    id = insert_sync_integro_upgrade
+    version = 0.0.1
+    environment = develop
+
+[Uralsib_roles_4_1_1]
+    path = packages/_upg/uralsib_roles_4_1_1
+    id = Uralsib_roles_4_1_1
+    version = 0.0.7
+
+[Uralsib_test_users_upg]
+    path = packages/_upg/uralsib_test_users
+    id = Uralsib_test_users
+    version = 4.3.1.1
+    environment = developupg
+
+[Uralsib_report_pack_upg]
+    path = packages/_upg/uralsib_report_pack
+    id = Uralsib_report_pack
+    version = 4.1.10
+
+[dbgit]
+    path = packages/dbgit
+    id = dbgit
+    version = 1.0.3
+    environment = hs321
+
+[dummy_kih]
+    path = packages/dummy_kih
+    id = dummy_kih
+    version = 1.0.0
+    environment = develop
+
+
+[Uralsib_group_marketplace_upg]
+    path = packages/_upg/uralsib_group_marketplace
+    id = Uralsib_group_marketplace
+    version = 1.1.0
+
+[Uralsib_config_upg]
+    path = packages/_upg/uralsib_config
+    id = Uralsib_config
+    version = 3.6.0
+
+; кончились подмодули
+; пошли апгрейды
+
+[acl_install_actions]
+    path = packages/_upg/acl_install_actions
+    id = acl_install_actions
+    version = 1.0.0
+
+[account_task_wf1]
+    path = packages/_upg/account_task_wf1
+    id = account_task_wf1
+    version = 4.2.1
+
+[uralsib_report_agents]
+    path = packages/_upg/uralsib_report_agents
+    id = Uralsib_report_agents
+    version = 4.1.2
+
+[agents_dbappliststrings]
+    path = packages/_upg/agents_dbappliststrings
+    id = agents_dbappliststrings
+    version = 1.0.0
+
+[uralsib_report_treatments]
+    path = packages/_upg/uralsib_report_treatments
+    id = Uralsib_report_treatments
+    version = 1.0.0
+
+
+[update_status_opp_salary]
+    path = packages/_upg/update_status_opp_salary
+    id = update_status_opp_salary
+    version = 4.1.0
+
+[Uralsib_updtask_assignka]
+    path = packages/_upg/uralsib_updtask_assignka
+    id = Uralsib_updtask_assignka
+    version = 4.3.1
+
+[Uralsib_opp_workflow_functions]
+    path = packages/_upg/uralsib_opp_workflow_functions
+    id = Uralsib_opp_workflow_functions
+    version = 4.3.1.1
+
+[Uralsib_updopp_typeproduct]
+    path = packages/_upg/uralsib_updopp_typeproduct
+    id = Uralsib_updopp_typeproduct
+    version = 4.3.1
+
+[Uralsib_opp_products_amount]
+    path = packages/_upg/uralsib_opp_products_amount
+    id = Uralsib_opp_products_amount
+    version = 4.3.1
+
+[insert_partner_list]
+    path = packages/_upg/insert_partner_list
+    id = insert_partner_list
+    version = 4.4.1
+
+[Uralsib_roles_4_4_1]
+    path = packages/_upg/uralsib_roles_4_4_1
+    id = Uralsib_roles_4_4_1
+    version = 4.4.1
+
+[Uralsib_updacc_lastcontact]
+    path = packages/_upg/uralsib_updacc_lastcontact
+    id = Uralsib_updacc_lastcontact
+    version = 4.2.1
+
+[uralsib_insert_agents_upd]
+    path = packages/_upg/uralsib_insert_agents
+    id = uralsib_insert_agents
+    version = 4.2.5.0
+
+[update_leads_datelastmodified]
+    path = packages/_upg/update_leads_datelastmodified
+    id = update_leads_datelastmodified
+    version = 4.2.2
+
+[leads_massupdate_acl]
+    path = packages/_upg/leads_massupdate_acl
+    id = leads_massupdate_acl
+    version = 4.2.2
+
+[leads_dbappliststrings]
+    path = packages/_upg/leads_dbappliststrings
+    id = leads_dbappliststrings
+    version = 4.2.3
+
+[leads_dbappliststrings_converted]
+    path = packages/_upg/leads_dbappliststrings_converted
+    id = leads_dbappliststrings_converted
+    version = 4.2.2
+
+[leads_update_status_converted]
+    path = packages/_upg/leads_update_status_converted
+    id = leads_update_status_converted
+    version = 4.2.2
+
+[uralsib_load_patch2]
+    path = packages/_upg/uralsib_load_patch2
+    id = uralsib_load_patch2
+    version = 4.2.2
+
+[rsorders_tftemplates_upg]
+    path = packages/_upg/rsorders_tftemplates
+    id = rsorders_tftemplates
+    version = 4.2.5.3
+
+[Uralsib_Report_interest]
+    path = packages/_upg/uralsib_report_interests
+    id = Uralsib_Report_interest
+    version = 0.0.1
+
+[insert_phonenums]
+    path = packages/_upg/insert_phonenums
+    id = insert_phonenums
+    version = 4.2.4
+
+[uralsib_rsorders_confirm_wf3]
+    path = packages/_upg/uralsib_rsorders_confirm_wf3
+    id = uralsib_rsorders_confirm_wf3
+    version = 1.0.0
+
+[uralsib_rsorders_confirm_wf4]
+    path = packages/_upg/uralsib_rsorders_confirm_wf4
+    id = uralsib_rsorders_confirm_wf4
+    version = 1.0.0
+
+[Update_tasks_collegial_date]
+    path = packages/_upg/update_tasks_collegial_date
+    id = Update_tasks_collegial_date
+    version = 4.3.1
+
+[Uralsib_indices]
+    path = packages/_upg/uralsib_indices
+    id = Uralsib_indices
+   version = 1.0.0
+
