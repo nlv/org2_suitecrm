@@ -7,3 +7,6 @@
 [submodule "packages/fiasaddr"]
 	path = packages/fiasaddr
 	url = https://gitlab.lab321.ru/sugarcrm/fiasaddr.git
+[submodule "packages/addressfias"]
+	path = packages/addressfias
+	url = https://gitlab.lab321.ru/sugarcrm/addressfias.git
