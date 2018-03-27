@@ -46,3 +46,8 @@
     id = ru_RU
     version = 7.10.1.2
 
+[fias]
+    path = packages/fias
+    id = fias
+    version = 1.0.1
+

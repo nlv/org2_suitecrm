@@ -565,3 +565,9 @@
 [submodule "dbdata"]
 	path = dbdata
 	url = https://gitlab.fc.uralsibbank.ru/sugar/dbdata.git
+[submodule "packages/fias"]
+	path = packages/fias
+	url = https://gitlab.lab321.ru/sugarcrm/fias.git
+[submodule "packages/fiasaddr"]
+	path = packages/fiasaddr
+	url = https://gitlab.lab321.ru/sugarcrm/fiasaddr.git
