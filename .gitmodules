@@ -10,3 +10,9 @@
 [submodule "packages/addressfias"]
 	path = packages/addressfias
 	url = https://gitlab.lab321.ru/sugarcrm/addressfias.git
+[submodule "packages/org2_contacts"]
+	path = packages/org2_contacts
+	url = https://github.com/nlv/org2_contacts.git
+[submodule "packages/org2_forms"]
+	path = packages/org2_forms
+	url = https://github.com/nlv/org2_forms.git

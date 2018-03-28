@@ -1,17 +1,18 @@
 <?php 
 $GLOBALS["tabStructure"] =array (
-  'LBL_TABGROUP_MARKETING' => 
+  'LBL_TABGROUP_SALES' => 
   array (
-    'label' => 'LBL_TABGROUP_MARKETING',
+    'label' => 'LBL_TABGROUP_SALES',
     'modules' => 
     array (
       0 => 'Home',
       1 => 'Accounts',
       2 => 'Contacts',
-      3 => 'Leads',
-      4 => 'Campaigns',
-      5 => 'Prospects',
-      6 => 'ProspectLists',
+      3 => 'Opportunities',
+      4 => 'Leads',
+      5 => 'Contracts',
+      6 => 'Quotes',
+      7 => 'Forecasts',
     ),
   ),
   'LBL_TABGROUP_SUPPORT' => 

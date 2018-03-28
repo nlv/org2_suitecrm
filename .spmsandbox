@@ -14,33 +14,6 @@
 ;     id = example_id
 ;     version = 1.0.0
 
-; Environments:
-;  develop - пакеты для сборок разработчиков (для автотестов, для синхронизации с ручными изменениями на проде)
-;  ignore - пакеты, которые можно не ставить
-;  hs321 - пакеты, которые поддерживаются hardsoft321, это не скрипты для прода
-
-; TODO: изменение varchar2 полей
-; CREATE OR REPLACE PROCEDURE sugar_oracle_repair
-; AS
-; BEGIN
-;  FOR AAA IN
-;  ( SELECT
-;     a.TABLE_NAME, a.COLUMN_NAME, a.DATA_TYPE, a.DATA_LENGTH
-;    FROM
-;     user_tab_columns a
-;    WHERE
-;     a.DATA_TYPE = 'VARCHAR2'
-;    AND
-;     a.CHAR_USED = 'B'
-;  )
-;  LOOP
-;   EXECUTE IMMEDIATE 'ALTER TABLE '||AAA.TABLE_NAME||' MODIFY '||AAA.COLUMN_NAME||' VARCHAR2('||AAA.DATA_LENGTH||' CHAR)';
-;  END LOOP;
-; END;  --PROCEDURE sugar_oracle_repair
-;
-; CALL sugar_oracle_repair();
-
-; RUSSIAN RAPIRA LANGUAGE PACK уже в гите, TODO: в config.php в languages добавить 'ru_ru' => 'Русский - Russian'
 [ru_RU]
     path = packages/ru
     id = ru_RU
@@ -49,14 +22,24 @@
 [fias]
     path = packages/fias
     id = fias
-    version = 1.0.1
+    version = 1.0.2
 
 [fiasaddr]
     path = packages/fiasaddr
     id = FiasAddr
-    version = 1.0.1
+    version = 1.0.2
 
 [addressfias]
     path = packages/addressfias
     id = AddressFIAS
-    version = 0.0.1
+    version = 0.0.2
+
+[org2_contacts]
+    path = packages/org2_contacts
+    id = org2_contacts
+    version = 1.0.0
+
+[org2_forms]
+    path = packages/org2_forms
+    id = org2_forms
+    version = 1.0.2
