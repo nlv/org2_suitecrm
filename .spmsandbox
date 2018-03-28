@@ -56,7 +56,7 @@
     id = FiasAddr
     version = 1.0.1
 
-;[addressfias]
-;    path = packages/addressfias
-;    id = AddressFIAS
-;    version = 1.0.0
+[addressfias]
+    path = packages/addressfias
+    id = AddressFIAS
+    version = 0.0.1
