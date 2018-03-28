@@ -83,6 +83,7 @@ array (
             'label' => 'LBL_MOBILE_PHONE',
           ),
         ),
+        array ('vk_url', null),
         array (
           0 => 
           array (

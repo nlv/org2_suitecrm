@@ -63,4 +63,12 @@ $dictionary["Contact"]["fields"]["fullname"] = array (
         'listview' => false,
       ),
 );
+$dictionary["Contact"]["fields"]["vk_url"] = array (
+            'name' => 'vk_url',
+            'vname' => 'LBL_VK_URL',
+            'audited' => true,
+            'type' => 'url',
+            'dbType' => 'varchar',
+            'len' => 255,
+);
 ?>

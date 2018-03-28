@@ -16,3 +16,6 @@
 [submodule "packages/org2_forms"]
 	path = packages/org2_forms
 	url = https://github.com/nlv/org2_forms.git
+[submodule "packages/org2_doms"]
+	path = packages/org2_doms
+	url = https://github.com/nlv/org2_doms.git
