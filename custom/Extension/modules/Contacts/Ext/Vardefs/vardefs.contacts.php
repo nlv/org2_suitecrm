@@ -12,8 +12,7 @@ $dictionary["Contact"]["fields"]["patronymic_name"] = array (
       ),
       'comment' => 'Patronymic name of the contact',
       'merge_filter' => 'selected',
-      'required' => true,
-      'importable' => 'required',
+      'required' => false,
 );
 $dictionary["Contact"]["fields"]["name"] = array (
       'name' => 'name',
@@ -70,5 +69,29 @@ $dictionary["Contact"]["fields"]["vk_url"] = array (
             'type' => 'url',
             'dbType' => 'varchar',
             'len' => 255,
+);
+
+$dictionary["Contact"]["fields"]["feddistrict"] = array (
+	    'name' => 'feddistrict',
+	    'vname' => 'LBL_FEDDISTRICT',
+	    'type' => 'enum',
+	    'options' => 'federal_districts_dom',
+	    'len' => '255',
+);
+
+$dictionary["Contact"]["fields"]["metropolis"] = array (
+	    'name' => 'metropolis',
+	    'vname' => 'LBL_METROPOLIS',
+	    'type' => 'enum',
+	    'options' => 'metropolises_dom',
+	    'len' => '255',
+);
+
+$dictionary["Contact"]["fields"]["diocese"] = array (
+	    'name' => 'diocese',
+	    'vname' => 'LBL_DIOCESE',
+	    'type' => 'enum',
+	    'options' => 'dioceses_dom',
+	    'len' => '255',
 );
 ?>

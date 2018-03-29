@@ -34,17 +34,18 @@
     id = AddressFIAS
     version = 0.0.2
 
+[org2_doms]
+    path = packages/org2_doms
+    id = org2_doms
+    version = 1.1.4
+
 [org2_contacts]
     path = packages/org2_contacts
     id = org2_contacts
-    version = 1.1.0
+    version = 1.2.2
 
 [org2_forms]
     path = packages/org2_forms
     id = org2_forms
-    version = 1.0.3
+    version = 1.0.4
 
-[org2_doms]
-    path = packages/org2_doms
-    id = org2_doms
-    version = 1.0.0

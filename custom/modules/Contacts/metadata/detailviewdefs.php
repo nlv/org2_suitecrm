@@ -205,6 +205,8 @@ array (
             'label' => 'LBL_EMAIL_ADDRESS',
           ),
         ),
+        array ('feddistrict', null),
+	array ('metropolis', 'diocese'),
         array (
           0 => 
           array (
