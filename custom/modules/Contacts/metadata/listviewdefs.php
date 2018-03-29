@@ -55,6 +55,12 @@ $listViewDefs['Contacts'] = array(
 		'customCode' => '{$EMAIL1_LINK}',
         'default' => true
 		),  
+	'VK_URL' => array(
+		'width' => '15%', 
+		'label' => 'LBL_VK_URL',
+		'sortable' => false,
+        'default' => true
+		),  
 	'PHONE_WORK' => array(
 		'width' => '15%', 
 		'label' => 'LBL_OFFICE_PHONE',

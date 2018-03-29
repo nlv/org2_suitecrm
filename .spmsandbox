@@ -47,5 +47,5 @@
 [org2_forms]
     path = packages/org2_forms
     id = org2_forms
-    version = 1.0.4
+    version = 1.0.6
 
