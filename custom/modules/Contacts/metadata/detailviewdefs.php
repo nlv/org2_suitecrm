@@ -143,19 +143,20 @@ array (
             'name' => 'first_name',
             'comment' => 'First name of the contact',
             'label' => 'LBL_FIRST_NAME',
+	    'customCode' => '{$APP_LIST.salutation_dom[$fields.salutation.value]} {$fields.first_name.value}',
           ),
           1 => 
-          array (
-            'name' => 'last_name',
-            'comment' => 'Last name of the contact',
-            'label' => 'LBL_LAST_NAME',
-          ),
-        ),
-        array (
           array (
             'name' => 'patronymic_name',
             'comment' => 'Patronymic name of the contact',
             'label' => 'LBL_PATRONYMIC_NAME',
+          ),
+        ),
+        array (
+          array (
+            'name' => 'last_name',
+            'comment' => 'Last name of the contact',
+            'label' => 'LBL_LAST_NAME',
           ),
 	  null
         ),

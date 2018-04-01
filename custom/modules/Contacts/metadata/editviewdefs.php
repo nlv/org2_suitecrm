@@ -58,16 +58,14 @@ array (
           ),
           1 => 
           array (
-            'name' => 'last_name',
-          ),
-        ),
-        array (
-          array (
             'name' => 'patronymic_name',
             'comment' => 'Patronymic name of the contact',
             'label' => 'LBL_PATRONYMIC_NAME',
           ),
-	  null
+          array (
+            'name' => 'last_name',
+          ),
+	  null,
         ),
         array (
           0 => 

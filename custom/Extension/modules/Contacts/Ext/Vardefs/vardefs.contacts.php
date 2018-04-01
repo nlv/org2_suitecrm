@@ -22,9 +22,9 @@ $dictionary["Contact"]["fields"]["name"] = array (
       'link' => true,
       'fields' => 
       array (
-        0 => 'first_name',
-	1 => 'patronymic_name',
-        2 => 'last_name',
+        'last_name',
+        'first_name',
+	'patronymic_name',
       ),
       'sort_on' => 'last_name',
       'source' => 'non-db',
@@ -32,20 +32,21 @@ $dictionary["Contact"]["fields"]["name"] = array (
       'len' => '255',
       'db_concat_fields' => 
       array (
-        0 => 'first_name',
-	1 => 'patronymic_name',
-        2 => 'last_name',
+        'last_name',
+        'first_name',
+	'patronymic_name',
       ),
       'importable' => 'false',
 );
 
-$dictionary["Contact"]["fields"]["fullname"] = array (
+$dictionary["Contact"]["fields"]["full_name"] = array (
+     'name' => 'full_name',
      'type' => 'fullname',
       'fields' => 
       array (
-        0 => 'first_name',
-	1 => 'patronymic_name',
-        2 => 'last_name',
+        'last_name',
+        'first_name',
+	'patronymic_name',
       ),
       'sort_on' => 'last_name',
       'source' => 'non-db',
@@ -53,9 +54,33 @@ $dictionary["Contact"]["fields"]["fullname"] = array (
       'len' => '510',
       'db_concat_fields' => 
       array (
-        0 => 'first_name',
-	1 => 'patronymic_name',
-        2 => 'last_name',
+        'last_name',
+        'first_name',
+	'patronymic_name',
+      ),
+      'studio' => 
+      array (
+        'listview' => false,
+      ),
+);
+$dictionary["Contact"]["fields"]["full_name2"] = array (
+     'name' => 'full_name2',
+     'type' => 'fullname',
+      'fields' => 
+      array (
+        'last_name',
+        'first_name',
+	'patronymic_name',
+      ),
+      'sort_on' => 'last_name',
+      'source' => 'non-db',
+      'group' => 'last_name',
+      'len' => '510',
+      'db_concat_fields' => 
+      array (
+        'last_name',
+        'first_name',
+	'patronymic_name',
       ),
       'studio' => 
       array (

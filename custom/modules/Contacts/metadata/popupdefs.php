@@ -6,7 +6,7 @@ global $mod_strings;
 $popupMeta = array(
 	'moduleMain' => 'Contact',
 	'varName' => 'CONTACT',
-	'orderBy' => 'contacts.first_name, contacts.patronymic_name, contacts.last_name',
+	'orderBy' => 'contacts.last_name, contacts.first_name, contacts.patronymic_name',
 	'whereClauses' => 
 		array('first_name' => 'contacts.first_name', 
 				'patronymic_name' => 'contacts.patronymic_name',
