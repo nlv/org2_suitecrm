@@ -31,6 +31,38 @@ array (
           'field' => '30',
         ),
       ),
+      'javascript' => "
+        <script>
+	  function setOptions (list, pval, field, cval = undefined) {ldelim}
+	      ops = SUGAR.language.languages['app_list_strings'][list][pval];
+              field.empty();
+	      $.each(ops,function(k, v) {ldelim} 
+                 field.append($('<option></option>',{ldelim}value: k, text:v{rdelim}));
+              {rdelim});
+
+	      if (cval != undefined) {ldelim}
+		if (!(cval in ops)) {ldelim}
+                 alert('1');
+                 field.append($('<option></option>',{ldelim}value: cval, text:cval{rdelim}));
+                {rdelim}
+                field.val(cval);
+              {rdelim}
+	  {rdelim}
+
+
+          $(document).ready(function() {ldelim}
+             setOptions ('metropolises_by_feddistricts_dom',
+  	         $('#feddistrict').val(),
+		 $('#metropolis'),
+                 $('#metropolis').val()
+             );
+             setOptions ('dioces_by_metropolises_dom',
+ 	         $('#metropolis').val(),
+		 $('#diocese'),
+		 $('#diocese').val()
+	     );
+          {rdelim});
+        </script>",
       'useTabs' => false,
       'tabDefs' => 
       array (
@@ -121,8 +153,41 @@ array (
             'label' => 'LBL_EMAIL_ADDRESS',
           ),
         ),
-        array ('feddistrict', null),
-	array ('metropolis', 'diocese'),
+	array (
+		[
+			'name' => 'feddistrict',
+                         'displayParams' => [
+                             'field' => [
+				     'onchange' => "
+				         setOptions ('metropolises_by_feddistricts_dom',
+						     this.value,
+						     $('#metropolis')
+                                         );
+				         setOptions ('dioces_by_metropolises_dom',
+						     $('#metropolis').val(),
+						     $('#diocese')
+                                         )
+				     "
+			     ]
+		         ]
+
+		], 
+		null),
+	array (
+		[
+			'name' => 'metropolis',
+                         'displayParams' => [
+                             'field' => [
+			         'onchange' => "setOptions (
+			  	                  'dioces_by_metropolises_dom',
+						  this.value,
+					          $('#diocese'))"
+			     ]
+		         ]
+
+		], 
+		'diocese'
+	),
         array (
           0 => 
           array (
