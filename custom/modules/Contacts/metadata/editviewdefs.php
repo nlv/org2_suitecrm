@@ -42,7 +42,6 @@ array (
 
 	      if (cval != undefined) {ldelim}
 		if (!(cval in ops)) {ldelim}
-                 alert('1');
                  field.append($('<option></option>',{ldelim}value: cval, text:cval{rdelim}));
                 {rdelim}
                 field.val(cval);
