@@ -119,4 +119,16 @@ $dictionary["Contact"]["fields"]["diocese"] = array (
 	    'options' => 'dioceses_dom',
 	    'len' => '255',
 );
+
+$dictionary["Contact"]["fields"]["tags"] = array (
+                'name' => 'tags',
+                'vname' => 'LBL_TAGS',
+                'type' => 'multienum',
+                'importable' => 'true',
+                'audited' => 1,
+                'reportable' => 1,
+                'options' => 'contacts_tags_dom',
+                'isMultiSelect' => true,
+);
+
 ?>

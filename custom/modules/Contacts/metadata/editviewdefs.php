@@ -99,6 +99,10 @@ array (
           ),
 	  null,
         ),
+	array (
+		'tags',
+		null,
+	),
         array (
           0 => 
           array (
