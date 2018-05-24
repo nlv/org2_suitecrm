@@ -19,3 +19,6 @@
 [submodule "packages/org2_doms"]
 	path = packages/org2_doms
 	url = https://github.com/nlv/org2_doms.git
+[submodule "packages/org2_accounts"]
+	path = packages/org2_accounts
+	url = https://github.com/nlv/org2_accounts.git

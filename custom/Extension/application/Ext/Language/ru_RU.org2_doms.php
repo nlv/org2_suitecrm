@@ -238,3 +238,10 @@ $app_list_strings['contacts_tags_dom'] = [
 	'volonteers_prolife'     => 'Волонтеры "За жизнь!"',
 	'interested_royal_theme' => 'Интерес Царская тема',
 ];
+
+$app_list_strings['accounts_tags_dom'] = [
+	'' => '',
+	'prolife_partner'        => 'Партнер "За жизнь!"',
+	'prolife_member'         => 'Участник "За жизнь!"',
+	'interested_royal_theme' => 'Интерес Царская тема',
+];
