@@ -103,8 +103,8 @@ array (
             'label' => 'LBL_EMAIL',
           ),
         ),
-	array ('feddistrict', null),
-	array ('metropolis', 'dioces'),
+        array ('feddistrict', null),
+	array ('metropolis', 'diocese'),
         array (
           array (
             'name' => 'billing_address_street',

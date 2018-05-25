@@ -236,6 +236,7 @@ $app_list_strings['contacts_tags_dom'] = [
 	'' => '',
 	'prolife_active'         => 'Актив "За жизнь!"',
 	'volonteers_prolife'     => 'Волонтеры "За жизнь!"',
+	'prolife_partner'        => 'Партнер "За жизнь!"',
 	'interested_royal_theme' => 'Интерес Царская тема',
 ];
 
@@ -244,4 +245,17 @@ $app_list_strings['accounts_tags_dom'] = [
 	'prolife_partner'        => 'Партнер "За жизнь!"',
 	'prolife_member'         => 'Участник "За жизнь!"',
 	'interested_royal_theme' => 'Интерес Царская тема',
+];
+
+$app_list_strings['account_type_dom'] = [
+  '' => '',
+  'Other' => 'Другое',
+  'Public' => 'Общественная организация',
+  'Parish' => 'Приход',
+  'MPC' => 'ЦЗМ',
+  'ANO' => 'АНО',
+  'CHH' => 'ЦГП',
+  'Diocese' => 'Епархия',
+  'Club' => 'Клуб',
+  'Charitable' => 'Благотворительный фонд',
 ];
