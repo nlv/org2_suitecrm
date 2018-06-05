@@ -81,53 +81,41 @@ array (
     array (
       'lbl_contact_information' => 
       array (
+	array (
+          array (
+            'name' => 'last_name',
+          ),
+	  null,
+	),
         array (
-          0 => 
           array (
             'name' => 'first_name',
             'customCode' => '{html_options name="salutation" id="salutation" options=$fields.salutation.options selected=$fields.salutation.value}&nbsp;<input name="first_name"  id="first_name" size="25" maxlength="25" type="text" value="{$fields.first_name.value}">',
           ),
-          1 => 
           array (
             'name' => 'patronymic_name',
             'comment' => 'Patronymic name of the contact',
             'label' => 'LBL_PATRONYMIC_NAME',
           ),
-          array (
-            'name' => 'last_name',
-          ),
-	  null,
         ),
 	array (
 		'tags',
 		null,
 	),
         array (
-          0 => 
-          array (
-            'name' => 'phone_work',
-            'comment' => 'Work phone number of the contact',
-            'label' => 'LBL_OFFICE_PHONE',
-          ),
-          1 => 
           array (
             'name' => 'phone_mobile',
             'comment' => 'Mobile phone number of the contact',
             'label' => 'LBL_MOBILE_PHONE',
           ),
+          array (
+            'name' => 'phone_work',
+            'comment' => 'Work phone number of the contact',
+            'label' => 'LBL_OFFICE_PHONE',
+          ),
         ),
         array ('vk_url', null),
         array (
-          0 => 
-          array (
-            'name' => 'title',
-            'comment' => 'The title of the contact',
-            'label' => 'LBL_TITLE',
-          ),
-          1 => 'department',
-        ),
-        array (
-          0 => 
           array (
             'name' => 'account_name',
             'displayParams' => 
@@ -141,11 +129,10 @@ array (
               ),
             ),
           ),
-          1 => 
           array (
-            'name' => 'phone_fax',
-            'comment' => 'Contact fax number',
-            'label' => 'LBL_FAX_PHONE',
+            'name' => 'title',
+            'comment' => 'The title of the contact',
+            'label' => 'LBL_TITLE',
           ),
         ),
         array (

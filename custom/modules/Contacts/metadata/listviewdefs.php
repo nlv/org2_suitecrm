@@ -26,7 +26,7 @@ $listViewDefs['Contacts'] = array(
 	'SALUTATION' => array(
 		'width' => '15%', 
 		'label' => 'LBL_SALUTATION',
-        'default' => true), 
+        ), 
 	'FEDDISTRICT' => array(
 		'width' => '15%', 
 		'label' => 'LBL_FEDDISTRICT',
@@ -39,13 +39,18 @@ $listViewDefs['Contacts'] = array(
 		'width' => '15%', 
 		'label' => 'LBL_DIOCESE',
         'default' => true), 
+        'PHONE_MOBILE' => array(
+          'width' => '10', 
+          'label' => 'LBL_MOBILE_PHONE',
+          'default' => true
+        ),
 	'EMAIL1' => array(
 		'width' => '15%', 
 		'label' => 'LBL_LIST_EMAIL_ADDRESS',
 		'sortable' => false,
 		'link' => true,
 		'customCode' => '{$EMAIL1_LINK}',
-        'default' => false
+        'default' => true
 		),  
 	'VK_URL' => array(
 		'width' => '15%', 
@@ -53,15 +58,14 @@ $listViewDefs['Contacts'] = array(
 		'sortable' => false,
         'default' => true
 		),  
-    'PHONE_MOBILE' => array(
-        'width' => '10', 
-        'label' => 'LBL_MOBILE_PHONE'),
     'CREATED_BY_NAME' => array(
         'width' => '10', 
         'label' => 'LBL_CREATED'),
     'TAGS' => array(
         'width' => '10', 
-        'label' => 'LBL_TAGS'),
+	'label' => 'LBL_TAGS',
+	'default' => true,
+     ),
     'ASSIGNED_USER_NAME' => array(
         'width' => '10', 
         'label' => 'LBL_LIST_ASSIGNED_USER',

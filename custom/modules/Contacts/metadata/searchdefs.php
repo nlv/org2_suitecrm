@@ -91,14 +91,6 @@ $searchdefs['Contacts'] = array(
                         'default' => true,
                         'width' => '10%',
                     ),
-                'address_postalcode' =>
-                    array(
-                        'name' => 'address_postalcode',
-                        'label' => 'LBL_POSTAL_CODE',
-                        'type' => 'name',
-                        'default' => true,
-                        'width' => '10%',
-                    ),
                 'assigned_user_id' =>
                     array(
                         'name' => 'assigned_user_id',
@@ -115,21 +107,14 @@ $searchdefs['Contacts'] = array(
                         'default' => true,
                         'width' => '10%',
                     ),
-                'primary_address_country' =>
-                    array(
-                        'name' => 'primary_address_country',
-                        'label' => 'LBL_COUNTRY',
-                        'type' => 'name',
-                        'options' => 'countries_dom',
-                        'default' => true,
-                        'width' => '10%',
-                    ),
-                'lead_source' =>
-                    array(
-                        'name' => 'lead_source',
-                        'default' => true,
-                        'width' => '10%',
-                    ),
+      'range_date_entered' => 
+      array (
+        'type' => 'datetimecombo',
+        'label' => 'LBL_DATE_ENTERED',
+        'width' => '10%',
+        'default' => true,
+        'name' => 'range_date_entered',
+      ),
 
             ),
     )

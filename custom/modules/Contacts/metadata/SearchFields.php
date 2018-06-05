@@ -27,6 +27,10 @@ $searchFields['Contacts'] =
             'query_type' => 'default',
             'db_field' => array('phone_mobile', 'phone_work', 'phone_other', 'phone_fax', 'assistant_phone')
         ),
+  'date_entered' => 
+  array (
+    'query_type' => 'default',
+  ),
         'email' => array(
             'query_type' => 'default',
             'operator' => 'subquery',

@@ -138,21 +138,6 @@ array (
       'lbl_contact_information' => 
       array (
         array (
-          0 => 
-          array (
-            'name' => 'first_name',
-            'comment' => 'First name of the contact',
-            'label' => 'LBL_FIRST_NAME',
-	    'customCode' => '{$APP_LIST.salutation_dom[$fields.salutation.value]} {$fields.first_name.value}',
-          ),
-          1 => 
-          array (
-            'name' => 'patronymic_name',
-            'comment' => 'Patronymic name of the contact',
-            'label' => 'LBL_PATRONYMIC_NAME',
-          ),
-        ),
-        array (
           array (
             'name' => 'last_name',
             'comment' => 'Last name of the contact',
@@ -160,46 +145,43 @@ array (
           ),
 	  null
         ),
+        array (
+          array (
+            'name' => 'first_name',
+            'comment' => 'First name of the contact',
+            'label' => 'LBL_FIRST_NAME',
+	    'customCode' => '{$APP_LIST.salutation_dom[$fields.salutation.value]} {$fields.first_name.value}',
+          ),
+          array (
+            'name' => 'patronymic_name',
+            'comment' => 'Patronymic name of the contact',
+            'label' => 'LBL_PATRONYMIC_NAME',
+          ),
+        ),
 	array (
 		'tags',
 		null,
 	),
         array (
-          0 => 
-          array (
-            'name' => 'phone_work',
-            'label' => 'LBL_OFFICE_PHONE',
-          ),
-          1 => 
           array (
             'name' => 'phone_mobile',
             'label' => 'LBL_MOBILE_PHONE',
           ),
+          array (
+            'name' => 'phone_work',
+            'label' => 'LBL_OFFICE_PHONE',
+          ),
         ),
         array ('vk_url', null),
         array (
-          0 => 
-          array (
-            'name' => 'title',
-            'comment' => 'The title of the contact',
-            'label' => 'LBL_TITLE',
-          ),
-          1 => 
-          array (
-            'name' => 'department',
-            'label' => 'LBL_DEPARTMENT',
-          ),
-        ),
-        array (
-          0 => 
           array (
             'name' => 'account_name',
             'label' => 'LBL_ACCOUNT_NAME',
           ),
-          1 => 
           array (
-            'name' => 'phone_fax',
-            'label' => 'LBL_FAX_PHONE',
+            'name' => 'title',
+            'comment' => 'The title of the contact',
+            'label' => 'LBL_TITLE',
           ),
         ),
         array (
@@ -209,6 +191,7 @@ array (
             'studio' => 'false',
             'label' => 'LBL_EMAIL_ADDRESS',
           ),
+	  null
         ),
         array ('feddistrict', null),
 	array ('metropolis', 'diocese'),
