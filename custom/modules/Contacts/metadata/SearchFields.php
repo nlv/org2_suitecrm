@@ -16,6 +16,7 @@ $searchFields['Contacts'] =
             'force_unifiedsearch' => true
         ),
         'account_name' => array('query_type' => 'default', 'db_field' => array('accounts.name')),
+        'tags' => array('query_type' => 'default'),
         'lead_source' => array(
             'query_type' => 'default',
             'operator' => '=',

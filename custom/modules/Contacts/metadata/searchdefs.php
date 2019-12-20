@@ -61,6 +61,12 @@ $searchdefs['Contacts'] = array(
                         'default' => true,
                         'width' => '10%',
                     ),
+                'tags' =>
+                    array(
+                        'name' => 'tags',
+                        'default' => true,
+                        'width' => '10%',
+                    ),
                 'address_street' =>
                     array(
                         'name' => 'address_street',
